@@ -1,0 +1,48 @@
+{
+	"LOGGER_LEVEL": 5,
+	"hana": {
+		"deploy-format": "hdbtable"
+	},
+	"requires": {
+		"uaa": {
+			"kind": "xsuaa"
+		},
+		"db": {
+			"kind": "sql",
+			"model": "*",
+			"[development]" : {
+				"credentials": {
+					"database": "cap.db"
+				}
+			}
+		}
+	},
+	"[production]": {
+		"auth": {
+			"passport": {
+				"strategy": "JWT"
+			}
+		}
+	},
+	"[development]": {
+		"i18n": { "for_sqlite": ["en", "es"] },
+		"auth": {
+			"passport": {
+				"strategy": "mock",
+				"users": {
+					"users": {
+						"password": "",
+						"ID": "user",
+						"roles": ["user"],
+						"tenant": "999ef85a-aef2-464b-89f6-6a3ce64f2e99",
+						"userAttributes": {
+							"currency": ["USD"],
+							"tenant": "999ef85a-aef2-464b-89f6-6a3ce64f2e99",
+							"email": "user@exemple.com"
+						}
+					}
+				}
+			}
+		}
+	}
+}
