@@ -5,7 +5,6 @@ using {
     managed 
 } from '@sap/cds/common';
 
-
     entity Orders : cuid  {
         items  : Composition of many {
                     key book : Association to Books;
@@ -13,7 +12,8 @@ using {
         }
     };
 
-    entity Books: cuid {
+    entity Books {
+        key ID : Integer;
         title  : localized String(100);
         descr  : localized String(500);
         stock  : Integer;

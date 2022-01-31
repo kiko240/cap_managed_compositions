@@ -1,0 +1,30 @@
+{
+    "name": "books",
+    "version": "0.0.1",
+    "private": true, 
+    "sapux": true, 
+    "description": "Aplicación tabla de libros",
+    "keywords": [
+        "ui5",
+        "openui5",
+        "sapui5"
+    ],
+    "main": "webapp/index.html",
+    "scripts": {
+        "start": "fiori run --open 'test/flpSandbox.html#EventTicket-browse'",
+        "build:cf": "ui5 build preload --clean-dest --config ui5.yaml --include-task=generateManifestBundle generateCachebusterInfo", 
+        "deploy-config": "npx -p @sap/ux-ui5-tooling fiori add deploy-config cf"
+    },
+    "devDependencies": {
+        "@sap/ui5-builder-webide-extension": "1.1.x",
+        "@sap/ux-ui5-tooling": "^1.4.4", 
+        "ui5-task-zipper": "^0.4.7" 
+    },
+    "ui5": { 
+        "dependencies": [ 
+            "@sap/ui5-builder-webide-extension", 
+            "@sap/ux-ui5-tooling", 
+            "ui5-task-zipper" 
+        ]  
+    } 
+}

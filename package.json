@@ -14,7 +14,12 @@
     "express": "^4"
   },
   "devDependencies": {
+    "@sap/cds-dk": "4.6.3",
+    "@sap/ux-specification": "^1.96.2",
     "sqlite3": "^5.0.2"
   },
-  "sapux": []
+  "sapux": [
+    "app/orders",
+    "app\\book_v2"
+  ]
 }
