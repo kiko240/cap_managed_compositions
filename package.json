@@ -20,6 +20,7 @@
   },
   "sapux": [
     "app/orders",
-    "app\\book_v2"
+    "app\\book_v2",
+    "app\\order_v2"
   ]
 }
