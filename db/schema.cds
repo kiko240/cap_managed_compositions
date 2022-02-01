@@ -6,6 +6,7 @@ using {
 } from '@sap/cds/common';
 
     entity Orders : cuid  {
+        clientName: String;
         items  : Composition of many {
                     key book : Association to Books;
                     quantity : Integer;
