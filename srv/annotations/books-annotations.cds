@@ -87,8 +87,7 @@ annotate Service.Books.texts with @(
         Identification  : [{
             $Type   : 'UI.DataField',
             Value   :   ID
-        }],
-        Identification  : [{
+        },{
             $Type   : 'UI.DataField',
             Value   :   locale
         }],
