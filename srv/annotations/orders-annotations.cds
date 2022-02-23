@@ -12,7 +12,7 @@ annotate Service.Orders with {
     ID
     @title : 'ID';
     clientName
-    @title : 'ClientName';
+    @title : 'Client Name';
 }
 
 annotate Service.Orders with @(
@@ -22,14 +22,14 @@ annotate Service.Orders with @(
             $Type : 'UI.DataField',
             Value : ID
         }],
-    SelectionFields: [ID],
+    SelectionFields: [clientName],
     LineItem: [
-      {Value: ID}
+      {Value: clientName}
     ],
   HeaderInfo               : {
     TypeName       : 'Order',
     TypeNamePlural : 'Orders',
-    Title          : {Value : ID}
+    Title          : {Value : clientName}
   },
   Facets                   : [
   {
@@ -47,10 +47,6 @@ annotate Service.Orders with @(
             Data  : [
                 {
                     $Type : 'UI.DataField',
-                    Value : ID
-                },
-                {
-                    $Type : 'UI.DataField',
                     Value : clientName
                 }
             ]
@@ -58,6 +54,7 @@ annotate Service.Orders with @(
   }
 );
 
+// Order_items
 annotate Service.Orders_items with @(Capabilities : {
     Insertable : true,
     Updatable  : true,
@@ -65,25 +62,26 @@ annotate Service.Orders_items with @(Capabilities : {
 });
 
 annotate Service.Orders.items with {
-    book
-    @Title:'Book';
     quantity
     @title : 'Quantity';
-    book_ID
+    book
     @title: 'Book ID';
 }
 
 annotate Service.Orders.items with @(
-    Common.SemanticKey  : [up__ID],
+    Common.SemanticKey  : [up__ID, book_ID],
     UI  : {
         Identification  : [{
             $Type   : 'UI.DataField',
-            Value   :   up__ID
+            Value   :  up__ID
+        }, {
+            $Type   : 'UI.DataField',
+            Value   :  book_ID
         }],
         SelectionFields  : [],
         LineItem  : [
-            {Value:book_ID},
-            {Value:quantity}
+            {Value: book_ID},
+            {Value: quantity}
         ],
         HeaderInfo  : {
             $Type : 'UI.HeaderInfoType',
